@@ -32,7 +32,7 @@ def get_track_details(track_id, token):
 
 token = get_spotify_token(client_id, client_secret)
 
-csv_file_path = 'regional-global-weekly-2023-05-04.csv'
+csv_file_path = 'regional-global-weekly-2022-12-08.csv'
 df = pd.read_csv(csv_file_path)
 
 df['artist_genre'] = ''
@@ -48,7 +48,7 @@ for index, row in df.iterrows():
     except Exception as e:
         print(f"Error processing track ID {track_id}: {e}")
 
-new_csv_file_path = 'may-23.csv'
+new_csv_file_path = 'december-22.csv'
 df.to_csv(new_csv_file_path, index=False)
 
 print(f"Updated CSV file saved as {new_csv_file_path}")
